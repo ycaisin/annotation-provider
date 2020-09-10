@@ -48,10 +48,7 @@ public class EncapsulatedAnnotationProcessor extends AbstractProcessor{
 					for (Element field : fields){
 							Set<javax.lang.model.element.Modifier> modifiers = field.getModifiers();
 							Modifier modifier = modifiers.stream().findFirst().get();
-									//modifiers.stream().filter(f ->f.equals(Modifier.PRIVATE)).findFirst().get();
-							
-							//anyMatch(f ->f.equals(Modifier.PRIVATE));
-							
+								
 						    if (!modifier.equals(Modifier.PRIVATE)) {   
 						    	messanger.printMessage(Kind.ERROR, "Field is not private", field);
 						    }
